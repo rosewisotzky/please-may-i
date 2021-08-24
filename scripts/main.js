@@ -1,4 +1,5 @@
 import  { pleaBox } from './pleaBox.js'
 
 let box = pleaBox();
-console.log(box)
+let container = document.querySelector(".plea");
+container.innerHTML += box;
