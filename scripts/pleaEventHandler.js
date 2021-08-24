@@ -12,6 +12,11 @@ export const pleaEventHandler = (event) => {
     displayArea.innerHTML = "";
 
     for (let i = 0; i < pleaAmount; i++) {
-        displayArea.innerHTML += `<br> ${inputVal} `;
+        if (i % 2 === 0) {
+            displayArea.innerHTML += `<br> ${inputVal} `;
+        }
+        else {
+            displayArea.innerHTML += `<br> ${inputVal.toUpperCase()} `;
+        }
     }
 }
