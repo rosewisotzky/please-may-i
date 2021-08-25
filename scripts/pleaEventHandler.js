@@ -5,18 +5,21 @@ export const howManyTimes = (event) => {
 }
 
 export const pleaEventHandler = (event) => {
-    console.log("u clicked me")
     let displayArea = document.querySelector(".plea_display")
     let input = document.querySelector(".plea_box")
     let inputVal = input.value
     displayArea.innerHTML = "";
 
     for (let i = 0; i < pleaAmount; i++) {
-        if (i % 2 === 0) {
-            displayArea.innerHTML += `<br> ${inputVal} `;
+        let randomNum = Math.floor((Math.random() * pleaAmount) + 1);
+        console.log("random number", randomNum);
+        console.log("index no. in loop", i);
+        if (i === randomNum) {
+
+            displayArea.innerHTML += `<br> ${inputVal.toUpperCase()} `;
         }
         else {
-            displayArea.innerHTML += `<br> ${inputVal.toUpperCase()} `;
+            displayArea.innerHTML += `<br> ${inputVal}`;
         }
     }
 }
