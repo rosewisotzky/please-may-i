@@ -1,7 +1,17 @@
 
 let pleaAmount = 0;
 export const howManyTimes = (event) => {
-    pleaAmount = event.target.value
+    let plea = event.target.value //here we are targeting where the change happens and console logging the value of our plea. what i don't get here is if the select is the event where the trigger occurs, why does it log the value of the option???? does this include children elements?
+    console.log("target value", plea)
+    if (plea === "surprise") {
+        //if we choose the option that has a value of surprise, we change our plea variable to be a random amount
+        let randomAmount = Math.floor((Math.random() * 100) + 1);
+        pleaAmount = randomAmount;
+    }
+    else {
+        //otherwise we set our plea amount variable to be the value of the option selected
+        pleaAmount = plea
+    }
 }
 
 export const pleaEventHandler = (event) => {
